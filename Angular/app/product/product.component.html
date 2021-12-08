@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<span class="border">
+
+  <head>
+    <title>Products</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container" id="admin">
+      <h2>Product Lists</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Product Id</th>
+            <th>Type</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Rating</th>
+            <th>Review</th>
+            <th>Image</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Specification</th>
+            <th>Actions</th>
+            <th> </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+            <td><span>{{product.productId}}</span></td>
+            <td><span>{{product.productType}}</span></td>
+            <td><span>{{product.productName}}</span></td>
+            <td><span>{{product.category}}</span></td>
+            <td><span>{{product.rating }}</span></td>
+            <td><span>{{product.review }}</span></td>
+            <td><span>{{product.image}}</span></td>
+            <td><span>{{product.price}}</span></td>
+            <td><span>{{product.description}}</span></td>
+            <td><span>{{product.specification}}</span></td>
+            <td><button type="button" class="btn btn-primary btn-sm"
+                (click)="deleteProduct(product.productId)">Delete</button></td>
+          </tr>
+          <button type="button" class="btn btn-primary btn-sm" (click)='addProduct()'>Add Product</button>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    

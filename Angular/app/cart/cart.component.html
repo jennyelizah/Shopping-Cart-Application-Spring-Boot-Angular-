@@ -1,0 +1,26 @@
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cart of carts">
+      <td><span>{{cart.productType}}</span></td>
+      <td><span>{{cart.productName}}</span></td>
+      <td><span>{{cart.category}}</span></td>
+      <td><span>{{cart.price}}</span></td>
+      <td><button type="button" class="btn btn-primary btn-sm">Delete</button></td>
+    </tr>
+    <tr>
+      GrandTotal:{{totalprice}}
+    </tr>
+  </tbody>
+  <button (click)=paynow()>Payment</button>
+</table>

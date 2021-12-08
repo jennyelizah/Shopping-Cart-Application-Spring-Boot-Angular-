@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Profiles</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <h2>Profile List</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Profile Id</th>
+          <th>Name</th>
+          <th>EmailId</th>
+          <th>Contact</th>
+          <th>About</th>
+          <th>DOB</th>
+          <th>Gender</th>
+          <th>UserName</th>
+          <th>Password</th>
+          <th>Address</th>
+          <th>Actions</th>
+          <th> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let profile of profiles">
+          <td><span>{{profile.profileId}}</span></td>
+          <td><span>{{profile.fullName}}</span></td>
+          <td><span>{{profile.emailId}}</span></td>
+          <td><span>{{profile.mobileNumber}}</span></td>
+          <td><span>{{profile.about}}</span></td>
+          <td><span>{{profile.dateOfbirth}}</span></td>
+          <td><span>{{profile.gender}}</span></td>
+          <td><span>{{profile.userName}}</span></td>
+          <td><span>{{profile.password}}</span></td>
+          <td><span>{{profile.address | json}}</span></td>
+          <td><button type="button" class="btn btn-primary btn-sm" (click)="delete(profile.profileId)">Delete</button>
+          </td>
+        </tr>
+        <button type="button" class="btn btn-primary btn-sm" (click)='addProfile()'>Add Profile</button>
+      </tbody>
+    </table>
+  </div>
+
+
+</body>
+
+</html>

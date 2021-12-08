@@ -1,0 +1,65 @@
+<h2>Add New Product</h2>
+<form #submitform="ngForm">
+  <div class="form-group">
+    <label for="ProductId">ProductId</label>
+    <input required type="number" class="form-control" #productId=ngModel (ngModel)="productId" id="productId"
+      name="productId" aria-describedby="productId" placeholder="Enter ProductId" ngModel>
+    <div *ngIf="productId.touched && productId.invalid" class="alert alert-danger">ProductId is required!</div>
+  </div>
+  <div class="form-group">
+    <label for="Type">Type</label>
+    <input required type="string" class="form-control" #productType=ngModel (ngModel)="productType" id="productType"
+      name="productType" aria-describedby="productType" placeholder="Enter Type" ngModel>
+    <div *ngIf="productType.touched && productType.invalid" class="alert alert-danger">ProductType is required!</div>
+  </div>
+  <div class="form-group">
+    <label for="Name">Name</label>
+    <input required type="string" class="form-control" #productName=ngModel (ngModel)="productName" id="productName"
+      name="productName" aria-describedby="productName" placeholder="Enter Name" ngModel>
+    <div *ngIf="productName.touched && productName.invalid" class="alert alert-danger">ProductName is required!</div>
+  </div>
+  <div class="form-group">
+    <label for="Category">Type</label>
+    <input type="string" class="form-control" #category=ngModel (ngModel)="category" id="category" name="category"
+      aria-describedby="category" placeholder="Enter Category" ngModel>
+    <div *ngIf="category.touched && category.invalid" class="alert alert-danger">Category is required!</div>
+  </div>
+  <div class="form-group">
+    <label for="Rating">Ratings</label>
+    <input type="string" class="form-control" #rating (ngModel)="rating" id="rating" name="rating"
+      aria-describedby="rating" placeholder="Enter Ratings">
+  </div>
+  <div class="form-group">
+    <label for="Review">Review</label>
+    <input type="string" class="form-control" #review (ngModel)="review" id="review" name="review"
+      aria-describedby="review" placeholder="Enter review">
+  </div>
+  <div class="form-group">
+    <label for="Image">Image</label>
+    <input required type="string" class="form-control" #image=ngModel (ngModel)="image" id="image" name="image"
+      aria-describedby="image" placeholder="Image" ngModel>
+    <div *ngIf="image.touched && image.invalid" class="alert alert-danger">Image is required!</div>
+  </div>
+  <div class="form-group">
+    <label for="Price">Price</label>
+    <input required type="number" class="form-control" #price=ngModel (ngModel)="price" id="price" name="price"
+      aria-describedby="price" placeholder="Enter Price" ngModel>
+    <div *ngIf="price.touched && price.invalid" class="alert alert-danger">Price is required!</div>
+  </div>
+  <div class="form-group">
+    <label for="Description">Description</label>
+    <input required type="string" class="form-control" #description=ngModel (ngModel)="description" id="description"
+      name="description" aria-describedby="description" placeholder="Enter Description" ngModel>
+    <div *ngIf="description.touched && description.invalid" class="alert alert-danger">Description is required!</div>
+  </div>
+  <div class="form-group">
+    <label for="Specification">Specification</label>
+    <input required type="string" class="form-control" #specification=ngModel (ngModel)="specification"
+      id="specification" name="specification" aria-describedby="specification" placeholder="Enter Specifications"
+      ngModel>
+    <div *ngIf="specification.touched && specification.invalid" class="alert alert-danger">Specification is required!
+    </div>
+  </div>
+  <button type="submit" [disabled]="submitform.invalid" class="btn btn-primary" (click)="addproduct(submitform)"
+    routerLink="/products">Submit</button>
+</form>
